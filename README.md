@@ -10,8 +10,8 @@ You can also share your private server access code to your friend allow them to 
 **important for For Android**:
 First Install a chromium based broswer that iclude extension 
 From my list, i only know these browser that include dev tool and extension:
-  - (Kwi Browser)[https://github.com/kiwibrowser/src.next/releases]
-  - (Titanium)[https://github.com/jqssun/android-titanium-browser/releases]
+  - [Kwi Browser](https://github.com/kiwibrowser/src.next/releases)
+  - [Titanium](https://github.com/jqssun/android-titanium-browser/releases)
 
 
 **Moving on To extension installation.**
