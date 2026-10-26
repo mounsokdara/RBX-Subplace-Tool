@@ -22,10 +22,11 @@ From my list, i only know these browser that include dev tool and extension:
    
    3 Turn on dev mode
    
-   ** Method 1: **
+   ### Method 1:
   - Drag and drop your zip file to the extension page
-   And login your roblox account to (roblox.com)[https://roblox.com]
-   *Method 2**
+   And login your roblox account to [roblox.com](https://roblox.com)
+
+   ### Method 2
    
   - Unzip your extension file
   
