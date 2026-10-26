@@ -113,13 +113,13 @@
 }
 
 .sp-actions .sp-join {
-    flex: 3 1 0;
+    flex: 1.5 1 0;
     min-width: 70px;
 }
 
 .sp-actions .sp-menu {
-    flex: 2 1 0;
-    min-width: 60px;
+    flex: 1 1 0;
+    min-width: 75px;
 }
 
 .sp-actions .sp-servers-btn,

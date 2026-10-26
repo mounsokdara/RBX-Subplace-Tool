@@ -112,8 +112,7 @@
         try {
             await navigator.clipboard.writeText(text);
             return;
-        } catch (e) {
-        }
+        } catch (e) {}
         const ta = document.createElement('textarea');
         ta.value = text;
         ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
@@ -378,7 +377,7 @@
                         if (s.vipServerId) {
                             menuItems.push(
                                 { label: 'Private Server code', value: async () => codeFromLink(await getPrivateLink(s.vipServerId)) },
-                                { label: 'Privatr Server link share code', value: () => getPrivateLink(s.vipServerId) },
+                                { label: 'Private Server link share code', value: () => getPrivateLink(s.vipServerId) },
                             );
                         }
                         if (s.id) menuItems.push({ label: 'Instance ID', value: String(s.id) });
@@ -554,31 +553,33 @@
                     const item = el('div', 'sp-item');
                     const actions = el('div', 'sp-actions');
 
-                    // Launch this specific subplace in the Roblox client.
                     const joinBtn = el('a', 'sp-btn sp-join', 'Join');
                     joinBtn.href = joinLink(p.id, {});
                     joinBtn.title = 'Launch this subplace in the Roblox app';
 
-                    // Copy menu with the place id and deep link.
                     const copyBtn = copyMenu([
                         { label: 'Place ID', value: String(p.id) },
                         { label: 'Launch link', value: joinLink(p.id, {}) },
                     ]);
 
-                    const serversBtn = el('button', 'sp-btn sp-servers-btn', 'Servers');
                     const privateBtn = el('button', 'sp-btn sp-private-btn', 'Private');
-                    actions.append(joinBtn, copyBtn, serversBtn, privateBtn);
+                    const serversBtn = el('button', 'sp-btn sp-servers-btn', 'Servers');
+                    
+                    actions.append(joinBtn, copyBtn, privateBtn, serversBtn);
                     item.append(card, statsLine(p.id), actions);
 
                     const pub = createServerPanel(p.id, 'public');
                     const priv = createServerPanel(p.id, 'private');
+                    
                     serversBtn.addEventListener('click', () => {
                         serversBtn.classList.toggle('sp-on', pub.toggle());
                     });
                     privateBtn.addEventListener('click', () => {
                         privateBtn.classList.toggle('sp-on', priv.toggle());
                     });
-                    list.append(item, pub.panel, priv.panel);
+                    
+                    // Private panel appended first (top), Public appended second (bottom)
+                    list.append(item, priv.panel, pub.panel);
                 }
                 shown += batch.length;
             }
